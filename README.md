@@ -50,7 +50,6 @@ In the original implementation, command execution works by:
 Constructing a batch file path:
 ```
 self.__batchFile = '%TEMP%\\' + BATCH_FILENAME
-Preparing the shell command using %COMSPEC% (typically cmd.exe) and redirection:
 ```
 Preparing the shell command using %COMSPEC% (typically cmd.exe) and redirection:
 ```
@@ -58,14 +57,12 @@ self.__shell = '%COMSPEC% /Q /c '
 command = self.__shell + 'echo ' + data + ' ^> ' + self.__output + ' 2^>^&1 > ' + self.__batchFile
 command += ' & ' + self.__shell + self.__batchFile
 command += ' & del ' + self.__batchFile
-Writing the command to disk, executing it, then reading the output file:
 ```
 
 Writing the command to disk, executing it, then reading the output file:
 ```
 self.__output = '\\127.0.0.1\\' + self.__share + '\\' + OUTPUT_FILENAME
 ```
-
 This method:
 
 - Creates temp files (.bat, output.txt) on the target
