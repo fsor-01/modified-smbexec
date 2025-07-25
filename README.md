@@ -43,7 +43,7 @@ python3 smbexec.py -k -no-pass domain.local/admin@target-host --exec-cmd='cmd.ex
 ```
 ❓ Why
 ========
-This modified version of smbexec.py is designed for stealthy, fileless command execution using only SMB (port 445) — ideal for NTLM relay scenarios or restricted environments where other ports (e.g., 135, 139) are blocked and AV detection is a concern.
+This modified version of smbexec.py is designed for stealthy, fileless command execution using only SMB (port 445) ideal for NTLM relay scenarios or restricted environments where other ports (e.g., 135, 139) are blocked and AV detection is a concern.
 
 In the original implementation, command execution works by:
 
