@@ -1,0 +1,9 @@
+This project includes a modified version of smbexec.py from the Impacket project:
+https://github.com/fortra/impacket
+
+Original license: Apache License 2.0
+
+Modifications by fsor-01 in 2025:
+- Added support for the --your-flag-name flag.
+
+See LICENSE for full license terms.
